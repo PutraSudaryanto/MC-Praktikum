@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sarapan">
+        <item>iwak eyek</item>
+        <item>rendang jengkol</item>
+        <item>asinan bogor</item>
+        <item>nasi rames</item>
+        <item>nasi gudeg</item>
+        <item>soto bekasi</item>
+        <item>bubur ayam</item>
+        <item>tahu genjrot</item>
+    </string-array>
+
+</resources>

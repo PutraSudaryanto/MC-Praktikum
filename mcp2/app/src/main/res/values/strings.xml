@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MC Pertemuan 2</string>
+    <string name="hello">Hello Spinner!</string>
+    <string name="sarapan_prompt">Pilih menu sarapanmu</string>
+</resources>
