@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAMA" />
+
+    <EditText
+        android:id="@+id/nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIM" />
+
+    <EditText
+        android:id="@+id/nim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/seleksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ASAL PROVINSI" />
+
+    <AutoCompleteTextView
+        android:id="@+id/provinsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Provinsi" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JENIS KELAMIN" />
+
+    <RadioGroup
+        android:id="@+id/jk"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5px">
+
+        <RadioButton
+            android:id="@+id/pria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pria" />
+
+        <RadioButton
+            android:id="@+id/wanita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Wanita" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANDA SETUJU DENGAN SEGALA KETENTUAN DARI KAMI " />
+
+    <CheckBox
+        android:id="@+id/ya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ya" />
+
+
+    <ImageButton
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_input_add" />
+</LinearLayout>
