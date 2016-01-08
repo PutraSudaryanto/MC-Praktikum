@@ -4,22 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/activity_vertical_margin">
-
-    <Button
-        android:id="@+id/buttonCreateStudent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Student" />
+    android:padding="@dimen/activity_vertical_margin" >
 
     <TextView
-        android:id="@+id/textViewRecordCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 records found." />
+        android:text="Nama" />
 
-    <LinearLayout
-        android:id="@+id/linearLayoutRecords"
+    <EditText
+        android:id="@+id/editTextStudentFirstname"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:ems="10">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/editTextStudentEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
 </LinearLayout>
