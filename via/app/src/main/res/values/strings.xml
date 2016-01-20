@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ProjectUas</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="header">Aplikasi Nilai Siswa</string>
+    <string name="menu1">Manajemen Nilai</string>
+    <string name="menu2">Siswa Paling Wow!!</string>
+    <string name="author">author : Budiyanto</string>
+    <string name="bt1">Tambah Data</string>
+    <string name="bt2">Kembali</string>
+    <string name="Menu3">Siswa Tidak Wow!!</string>
+    <string name="Layer1">Manajemen Nilai</string>
+    <string name="Layer2">Nilai Paling Tinggi</string>
+    <string name="Layer3">Nilai Paling Rendah</string>
+
+</resources>

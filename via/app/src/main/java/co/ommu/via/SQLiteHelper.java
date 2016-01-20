@@ -1,0 +1,166 @@
+package co.ommu.via;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class SQLiteHelper extends SQLiteOpenHelper {
+
+	private static final String nama_database = "database_nilai.db";
+	private static final int versi_database = 1;
+	private static final String query_buat_tabel_nilai = "CREATE TABLE IF NOT EXISTS tabel_nilai(id_biodata INTEGER PRIMARY KEY AUTOINCREMENT, nama TEXT, nilai INTEGER)";
+	private static final String query_hapus_tabel_nilai = "DROP TABLE IF EXISTS query_buat_tabel_nilai";
+
+	public SQLiteHelper(Context context) {
+		super(context, nama_database, null, versi_database);
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase sqLiteDatabase) {
+		sqLiteDatabase.execSQL(query_buat_tabel_nilai);
+		System.out.println("tabel_nilai sudah dibuat");
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase database, int versi_lama, int versi_baru) {
+		database.execSQL(query_hapus_tabel_nilai);
+		onCreate(database);
+
+	}
+
+	public void tambah_biodata(String nama, int nilai) {
+		SQLiteDatabase database = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put("nama", nama);
+		values.put("nilai", nilai);
+		database.insert("tabel_nilai", null, values);
+		database.close();
+	}
+
+	public ArrayList<HashMap<String, String>> tampil_semua_biodata() {
+		SQLiteDatabase database = this.getWritableDatabase();
+
+		// deklarasikan sebuah arraylist yang bisa menampung hashmap
+		ArrayList<HashMap<String, String>> arrayListBiodata = new ArrayList<HashMap<String, String>>();
+
+		Cursor cursor = database.rawQuery("SELECT * FROM tabel_nilai", null);
+
+		// kursor langsung diarkan ke posisi paling awal data pada tabel_nilai
+		if (cursor.moveToFirst()) {
+			do {
+				// deklarasikan sebuah hashmap, yang bisa menamp
+				HashMap<String, String> hashMapBiodata = new HashMap<String, String>();
+
+				// masukkan masing-masing field dari tabel_nilai ke dalamhashMapBiodata
+				// pastikan id_biodata, nama dan nilai sama persis dengan field yang ada pada tabel_nilai
+				hashMapBiodata.put("id_biodata", cursor.getString(0));
+				hashMapBiodata.put("nama", cursor.getString(1));
+				hashMapBiodata.put("nilai", cursor.getString(2));
+
+				// masukkan hashMapBiodata ke dalam arrayListBiodata
+				arrayListBiodata.add(hashMapBiodata);
+
+			} while (cursor.moveToNext());
+		}
+
+		return arrayListBiodata;
+	}
+
+	public ArrayList<HashMap<String, String>> tampil_rangking() {
+		SQLiteDatabase database = this.getWritableDatabase();
+
+		// deklarasikan sebuah arraylist yang bisa menampung hashmap
+		ArrayList<HashMap<String, String>> arrayListBiodata = new ArrayList<HashMap<String, String>>();
+
+		Cursor cursor = database.rawQuery("SELECT max(nilai) as nilai, nama, id_biodata FROM tabel_nilai", null);
+
+		// kursor langsung diarkan ke posisi paling awal data pada tabel_nilai
+		if (cursor.moveToFirst()) {
+			do {
+				// deklarasikan sebuah hashmap, yang bisa menamp
+				HashMap<String, String> hashMapBiodata = new HashMap<String, String>();
+
+				// masukkan masing-masing field dari tabel_biodata ke dalamhashMapBiodata
+				// pastikan id_biodata, nama dan nilai sama persis dengan field yang ada pada tabel_biodata
+				hashMapBiodata.put("id_biodata", cursor.getString(2));
+				hashMapBiodata.put("nama", cursor.getString(1));
+				hashMapBiodata.put("nilai", cursor.getString(0));
+
+				// masukkan hashMapBiodata ke dalam arrayListBiodata
+				arrayListBiodata.add(hashMapBiodata);
+
+			} while (cursor.moveToNext());
+		}
+
+		return arrayListBiodata;
+	}
+
+
+	public ArrayList<HashMap<String, String>> tampil_rendah() {
+		SQLiteDatabase database = this.getWritableDatabase();
+
+		// deklarasikan sebuah arraylist yang bisa menampung hashmap
+		ArrayList<HashMap<String, String>> arrayListBiodata = new ArrayList<HashMap<String, String>>();
+
+		Cursor cursor = database.rawQuery("SELECT min(nilai) as nilai, nama, id_biodata FROM tabel_nilai", null);
+
+		// kursor langsung diarkan ke posisi paling awal data pada tabel
+		if (cursor.moveToFirst()) {
+			do {
+				// deklarasikan sebuah hashmap, yang bisa menamp
+				HashMap<String, String> hashMapBiodata = new HashMap<String, String>();
+
+				// masukkan masing-masing field dari tabel_nilai ke dalamhashMapBiodata
+				// pastikan id_biodata, nama dan nilai sama persis dengan field yang ada pada tabel_biodata
+				hashMapBiodata.put("id_biodata", cursor.getString(2));
+				hashMapBiodata.put("nama", cursor.getString(1));
+				hashMapBiodata.put("nilai", cursor.getString(0));
+
+				// masukkan hashMapBiodata ke dalam arrayListBiodata
+				arrayListBiodata.add(hashMapBiodata);
+
+			} while (cursor.moveToNext());
+		}
+
+		return arrayListBiodata;
+	}
+
+	
+	
+	public int update_biodata(int id, String nama, int nilai) {
+		SQLiteDatabase database = this.getWritableDatabase();
+		ContentValues recordBiodata = new ContentValues();
+		recordBiodata.put("nama", nama);
+		recordBiodata.put("nilai", nilai);
+		return database.update("tabel_nilai", recordBiodata, "id_biodata=" + id, null);
+	}
+
+	public void hapus_biodata(int id) {
+		SQLiteDatabase database = this.getWritableDatabase();
+		database.execSQL("DELETE FROM  tabel_nilai WHERE id_biodata='" + id+ "'");
+		database.close();
+	}
+
+	public HashMap<String, String> tampil_biodata_berdasarkan_id(int id) {
+		SQLiteDatabase database = this.getReadableDatabase();
+
+		HashMap<String, String> hashMapBiodata = new HashMap<String, String>();
+		Cursor cursor = database.rawQuery("SELECT * FROM tabel_nilai WHERE id_biodata=" + id + "", null);
+
+		if (cursor.moveToFirst()) {
+			do {
+				hashMapBiodata.put("id_biodata", cursor.getString(0));
+				hashMapBiodata.put("nama", cursor.getString(1));
+				hashMapBiodata.put("nilai", cursor.getString(2));
+			} while (cursor.moveToNext());
+		}
+
+		return hashMapBiodata;
+	}
+
+}
