@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/add_contact"
+          android:icon="@mipmap/add"
+          android:title="@string/menu_add_contact" />
+    
+    <item android:id="@+id/edit_contact"
+          android:icon="@mipmap/edit"
+          android:title="@string/menu_edit_contact" />
+    
+    <item android:id="@+id/remove_contact"
+          android:icon="@mipmap/delete"
+          android:title="@string/menu_remove_contact" />
+</menu>
