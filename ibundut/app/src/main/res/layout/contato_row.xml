@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout01"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/LinearLayout02"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crNome"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/txtTelefone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/crTelefone"></TextView>
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/crEmail"></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtCpf"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/crCpf"
+            android:textAlignment="textEnd"
+            android:textSize="25dp"
+            android:textStyle="bold|italic"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#cccccc" />
+
+</LinearLayout>

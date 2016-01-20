@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">Yasinta Kontak</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello">Hello</string>
+    <string name="nome">Nama: </string>
+    <string name="cpf">Group: </string>
+    <string name="telefone">Telepon: </string>
+    <string name="email">Email: </string>
+    <string name="inserir">Tambah</string>
+    <string name="cancelar">Keluar</string>
+    <string name="crNome">Nama</string>
+    <string name="crCpf">Group</string>
+    <string name="crTelefone">Telepon</string>
+    <string name="crEmail">Email</string>
+
+</resources>

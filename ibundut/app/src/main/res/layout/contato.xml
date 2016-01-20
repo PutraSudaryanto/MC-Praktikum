@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:id="@+id/txtAux1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/nome" />
+
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/txtAux2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/cpf" />
+
+    <EditText
+        android:id="@+id/edtCpf"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/txtAux3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/telefone" />
+
+    <EditText
+        android:id="@+id/edtTelefone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/txtAux4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/email" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnInserir"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:onClick="btnInserir_click"
+            android:text="@string/inserir" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:onClick="btnCancelar_click"
+            android:text="@string/cancelar" />
+
+    </LinearLayout>
+
+</LinearLayout>
