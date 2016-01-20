@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:id="@+id/boxPersegiPanjang"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_panjang"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Panjang" />
+
+        <EditText
+            android:id="@+id/field_panjang"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone|number"
+            android:ems="10"/>
+
+        <TextView
+            android:id="@+id/text_lebar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Lebar" />
+
+        <EditText
+            android:id="@+id/field_lebar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone|number"
+            android:ems="10"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/boxPersegi"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_sisi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Sisi" />
+
+        <EditText
+            android:id="@+id/field_sisi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone|number"
+            android:ems="10" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/boxLingkaran"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_jari"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Jari-jari" />
+
+        <EditText
+            android:id="@+id/field_jari"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone|number"
+            android:ems="10" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/boxSegitiga"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_alas"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Alas" />
+
+        <EditText
+            android:id="@+id/field_alas"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone|number"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/text_tinggi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Tinggi" />
+
+        <EditText
+            android:id="@+id/field_tinggi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone|number"
+            android:ems="10" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_function"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Fungsi" />
+
+</LinearLayout>
