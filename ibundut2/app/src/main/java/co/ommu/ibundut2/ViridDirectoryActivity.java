@@ -100,10 +100,9 @@ public class ViridDirectoryActivity extends ListActivity {
 				"SELECT _id, firstName, lastName, title, \" - \" || department as department FROM viridEmployee WHERE firstName || ' ' || lastName LIKE ?",
 				new String[]{"%" + searchText.getText().toString()
 								+ "%" });
-		adapter = new SimpleCursorAdapter(this, R.layout.employee_list_item,
-				cursor, new String[] { "firstName", "lastName", "title",
-				"department" }, new int[] { R.id.firstName,
-				R.id.lastName, R.id.title, R.id.department });
+		adapter = new SimpleCursorAdapter(this, R.layout.employee_list_item, cursor,
+				new String[] { "firstName", "lastName", "title", "department" },
+				new int[] { R.id.firstName, R.id.lastName, R.id.title, R.id.department });
 		setListAdapter(adapter);
 	}
 
